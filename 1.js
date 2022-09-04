@@ -17,17 +17,20 @@ function alive(a,b){
     return na==3;
 }
 
+function select(){
+    if(this.style.backgroundColor!="white") this.style.backgroundColor="white";
+    else this.style.backgroundColor="black";
+}
+
 function create(){
     for(let i=0;i<60;i++){
-        let row=document.createElement("tr");
+        let row=document.createElement("div");
+        row.classList.add("row");
         for(let j=0;j<60;j++){
-            let cell=document.createElement("td");
             let button=document.createElement("button");
-            button.classList.add(i.toString());
-            button.classList.add(j.toString());
-            button.onclick="this.style.backgroundColor=white";
-            cell.appendChild(button);
-            row.appendChild(cell);
+            button.classList.add(i.toString()+"-"+j.toString());
+            button.addEventListener("click",select);
+            row.appendChild(button);
         }
         grid.appendChild(row);
     }
