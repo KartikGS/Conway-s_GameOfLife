@@ -19,7 +19,7 @@ button:hover{
     background-color: white;
 }
 
-#start{
+#start,#stop,#clear{
     background-color: white;
     width: auto;
     height: auto;

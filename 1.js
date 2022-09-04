@@ -4,8 +4,10 @@ let aliveCells=[];
 let toDie=[];
 let toLive=[];
 let grid=document.getElementById("grid");
-document.getElementById("start").addEventListener("click",startGame);
-let nx=0,ny=0,na=0,stop=0;
+document.getElementById("start").addEventListener("click",startGame1);
+document.getElementById("stop").addEventListener("click",stopGame);
+document.getElementById("clear").addEventListener("click",clearGame);
+let nx=0,ny=0,na=0,stopG=false;
 
 function alive(a,b){
     //console.log(a,b);
@@ -25,9 +27,29 @@ function alive(a,b){
     else return na==3;
 }
 
+function clearGame(){
+    let a=document.getElementsByClassName("alive");
+    console.log(a);
+    Array.from(a).forEach(function(e){
+        e.style.backgroundColor="black";
+        e.classList.remove("alive");
+    });
+    document.getElementById("start").style.backgroundColor="white";
+    document.getElementById("stop").style.backgroundColor="white";
+    aliveCells=[];
+}
+
+function stopGame(){
+    this.style.backgroundColor="cyan";
+    document.getElementById("start").style.backgroundColor="white";
+    stopG=true;
+}
+
 function startGame(){
-    console.log(stop++);
-    if(aliveCells.length==0 || stop==200) return;
+    if(aliveCells.length==0 || stopG){
+        document.getElementById("start").style.backgroundColor="white"; 
+        return;
+    }
     for(let a of aliveCells){
         let nx=parseInt(a.slice(0,a.indexOf("-"))),ny=parseInt(a.slice(a.indexOf("-")+1));
         if(!alive(nx,ny)){
@@ -64,7 +86,12 @@ function startGame(){
     setTimeout(startGame,100);
 }
 
-
+function startGame1(){
+    this.style.backgroundColor="cyan";
+    document.getElementById("stop").style.backgroundColor="white";
+    stopG=false;
+    startGame();
+}
 
 function select(){
     if(this.style.backgroundColor!="white"){ 
