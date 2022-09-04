@@ -18,3 +18,9 @@ button{
 button:hover{
     background-color: white;
 }
+
+#start{
+    background-color: white;
+    width: auto;
+    height: auto;
+}
