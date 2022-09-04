@@ -40,7 +40,7 @@ function clearGame(){
 }
 
 function stopGame(){
-    this.style.backgroundColor="cyan";
+    this.style.backgroundColor="#02f19a";
     document.getElementById("start").style.backgroundColor="white";
     stopG=true;
 }
@@ -87,7 +87,7 @@ function startGame(){
 }
 
 function startGame1(){
-    this.style.backgroundColor="cyan";
+    this.style.backgroundColor="#02f19a";
     document.getElementById("stop").style.backgroundColor="white";
     stopG=false;
     startGame();
