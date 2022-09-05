@@ -66,6 +66,7 @@ nav{
 
 main{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     margin-top: 4%;
@@ -76,6 +77,7 @@ main{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 2%;
 }
 
 .display{
@@ -161,21 +163,33 @@ h4{
 }
 
 .social{
-    padding: 2% 2% 2% 2%;
     color: #ddd;
+    font-size: 160%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    padding: 4% 4% 4% 4%;
+    justify-content: space-around;
     align-items: center;
 }
 
-.linear{
+.oscillators{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 5% 5% 5% 5%;
+    margin-bottom: 2%;
 }
 
-.linear img{
-    width: 15%;
+.oscillators img{
+    width: 19%;
+}
+
+.spaceships{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.spaceships img{
+    width: 20%;
 }
